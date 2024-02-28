@@ -1,0 +1,85 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  @apply font-josefin-sans;
+}
+
+main {
+  @apply flex md:flex-row flex-col-reverse max-w-[1440px] mx-auto md:bg-[url('/images/bg-pattern-desktop.svg')] bg-no-repeat max-sm:bg-gradient-to-r from-lighter to-lightest;
+}
+
+.hero {
+  @apply w-full h-full;
+}
+
+.hero header ~ img:nth-child(2) {
+  @apply ml-auto hidden md:block;
+}
+
+/* mobile */
+.hero header ~ img:nth-child(3) {
+  @apply md:hidden mx-auto w-full;
+}
+
+/* mobile */
+.hero header img {
+  @apply p-5 md:hidden;
+}
+
+section {
+  @apply md:pl-20 md:pt-12 px-5;
+}
+
+section h1 {
+  @apply md:text-8xl text-5xl pt-16 uppercase tracking-widest md:pt-32 max-sm:text-center;
+}
+
+section h1 span:nth-child(1) {
+  @apply text-desaturated-red font-light;
+}
+
+section h1 span:nth-child(2) {
+  @apply text-dark-grayish-red;
+}
+
+section #content {
+  @apply py-6 leading-8 text-justify text-desaturated-red max-sm:text-center;
+}
+
+section header img {
+  @apply md:block hidden;
+}
+
+.input-container {
+  @apply border border-desaturated-red md:max-w-md rounded-full justify-between flex max-w-xs;
+}
+
+.input-container.active {
+  @apply max-sm:mx-auto;
+}
+
+.input-container button {
+  @apply ml-auto bg-gradient-to-r from-light-red to-pale-red md:max-w-[100px] max-w-20 w-full rounded-full flex justify-center items-center md:py-5 py-4;
+}
+
+.input-container button.active {
+  @apply !bg-lightest translate-x-8 shadow-xl shadow-light-red;
+}
+
+.input-container input {
+  @apply ml-6 w-full focus:outline-none;
+}
+
+#error {
+  @apply text-soft-red pl-4 mt-2 hidden;
+}
+
+#icon-error {
+  @apply object-contain translate-x-4 hidden;
+}
+
+#error.active, #icon-error.active {
+  @apply block;
+}
