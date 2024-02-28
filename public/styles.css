@@ -577,29 +577,31 @@ main {
 .hero {
   height: 100%;
   width: 100%;
-}
-
-.hero header ~ img:nth-child(2) {
-  margin-left: auto;
-  display: none;
+  background-position: right top;
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 768px) {
-  .hero header ~ img:nth-child(2) {
-    display: block;
+  .hero {
+    height: 100vh;
+    background-image: url('/images/hero-desktop.jpg');
   }
 }
 
+/* .hero header ~ img:nth-child(2) {
+  @apply ml-auto hidden md:invisible;
+} */
+
 /* mobile */
 
-.hero header ~ img:nth-child(3) {
+.hero header ~ img:nth-child(2) {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
 
 @media (min-width: 768px) {
-  .hero header ~ img:nth-child(3) {
+  .hero header ~ img:nth-child(2) {
     display: none;
   }
 }
@@ -696,17 +698,22 @@ section header img {
   border-color: hsl(0 36% 70% / var(--tw-border-opacity));
 }
 
+@media not all and (min-width: 768px) {
+  .input-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (min-width: 768px) {
   .input-container {
     max-width: 28rem;
   }
 }
 
-@media not all and (min-width: 640px) {
-  .input-container.active {
-    margin-left: auto;
-    margin-right: auto;
-  }
+.input-container.active {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 .input-container button {
@@ -735,8 +742,6 @@ section header img {
 }
 
 .input-container button.active {
-  --tw-translate-x: 2rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-bg-opacity: 1 !important;
   background-color: hsl(0 100% 98% / var(--tw-bg-opacity)) !important;
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -744,6 +749,13 @@ section header img {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-shadow-color: hsl(0, 80%, 86%);
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+@media (min-width: 768px) {
+  .input-container button.active {
+    --tw-translate-x: 2rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 }
 
 .input-container input {
@@ -764,12 +776,31 @@ section header img {
   color: hsl(0 93% 68% / var(--tw-text-opacity));
 }
 
+@media not all and (min-width: 640px) {
+  #error {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 20rem;
+  }
+}
+
 #icon-error {
   display: none;
-  --tw-translate-x: 1rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media not all and (min-width: 640px) {
+  #icon-error {
+    margin-right: 0.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #icon-error {
+    --tw-translate-x: 1rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 }
 
 #error.active, #icon-error.active {

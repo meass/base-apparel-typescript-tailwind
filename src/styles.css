@@ -11,15 +11,15 @@ main {
 }
 
 .hero {
-  @apply w-full h-full;
+  @apply w-full h-full md:h-screen md:bg-[url('/images/hero-desktop.jpg')] bg-no-repeat bg-right-top;
 }
 
-.hero header ~ img:nth-child(2) {
-  @apply ml-auto hidden md:block;
-}
+/* .hero header ~ img:nth-child(2) {
+  @apply ml-auto hidden md:invisible;
+} */
 
 /* mobile */
-.hero header ~ img:nth-child(3) {
+.hero header ~ img:nth-child(2) {
   @apply md:hidden mx-auto w-full;
 }
 
@@ -53,11 +53,11 @@ section header img {
 }
 
 .input-container {
-  @apply border border-desaturated-red md:max-w-md rounded-full justify-between flex max-w-xs;
+  @apply border border-desaturated-red md:max-w-md rounded-full justify-between flex max-w-xs max-md:mx-auto;
 }
 
 .input-container.active {
-  @apply max-sm:mx-auto;
+  @apply !mx-0;
 }
 
 .input-container button {
@@ -65,7 +65,7 @@ section header img {
 }
 
 .input-container button.active {
-  @apply !bg-lightest translate-x-8 shadow-xl shadow-light-red;
+  @apply !bg-lightest md:translate-x-8 shadow-xl shadow-light-red;
 }
 
 .input-container input {
@@ -73,11 +73,11 @@ section header img {
 }
 
 #error {
-  @apply text-soft-red pl-4 mt-2 hidden;
+  @apply text-soft-red pl-4 mt-2 hidden max-sm:max-w-xs max-sm:mx-auto;
 }
 
 #icon-error {
-  @apply object-contain translate-x-4 hidden;
+  @apply object-contain md:translate-x-4 max-sm:mr-1 hidden;
 }
 
 #error.active, #icon-error.active {
